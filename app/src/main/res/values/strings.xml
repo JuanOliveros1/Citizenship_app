@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Citizenship app</string>
+    <string name="total_questions">Total Questions</string>
 </resources>

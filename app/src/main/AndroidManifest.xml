@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CitizenshipApp"
         tools:targetApi="31">
         <activity
+            android:name=".activity_2_quiz"
+            android:exported="false" />
+        <activity
             android:name=".activity_1"
             android:exported="false" />
         <activity
