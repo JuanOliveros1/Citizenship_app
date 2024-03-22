@@ -26,6 +26,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/question"
         android:layout_margin="20dp"
         android:text="Question Placeholder"
         android:textAlignment="center"
@@ -49,7 +50,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717">
+        app:layout_constraintVertical_bias="0.679">
 
         <Button
             android:id="@+id/ans_A"
@@ -92,6 +93,18 @@
             tools:ignore="HardcodedText" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choices_layout"
+
+        app:layout_constraintVertical_bias="0.548"
+        tools:ignore="HardcodedText"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
