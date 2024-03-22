@@ -3,6 +3,7 @@ package com.example.citizenshipapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -56,10 +57,33 @@ public class activity_2_quiz extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
 
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+
+        Button clickedButton = (Button) v;
+        if(clickedButton.getId() == R.id.submit_button){
+            currentQuestionIndex++;
+            loadNewQuestion();
+            if(selectedAnswer.equals(QuestionAnswer.correctAnswers[currentQuestionIndex])){
+                score++;
+            }
+
+        }else{
+            // choices button clicked
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.MAGENTA);
+
+        }
     }
 
     void loadNewQuestion(){
-
+        questionTextView.setText(QuestionAnswer.question[currentQuestionIndex]);
+        ansA.setText(QuestionAnswer.choices[currentQuestionIndex][0]);
+        ansB.setText(QuestionAnswer.choices[currentQuestionIndex][1]);
+        ansC.setText(QuestionAnswer.choices[currentQuestionIndex][2]);
+        ansD.setText(QuestionAnswer.choices[currentQuestionIndex][3]);
     }
 }
 
